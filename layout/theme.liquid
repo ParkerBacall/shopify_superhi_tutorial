@@ -11,6 +11,7 @@
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
 </head>
+
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" ></script>
   <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}" ></script>
@@ -25,6 +26,21 @@
     });
   });
 </script>
+
+  {% if template != 'cart' %}
+    <a href="/cart" class="link-to-cart"> 
+    {% if cart.item_count > 0 %}
+      {{ 'cart.button.filled' | t }}
+    {% else %}
+        {{ 'cart.button.empty'| t }}
+    {% endif %}
+     </a>
+  {% else %}
+    <a href="/" class="link-to-home"> 
+      {{ 'cart.button.close' | t }}
+     </a>
+  {% endif %}
+
   <main role="main">
     {{ content_for_layout }}
   </main>
