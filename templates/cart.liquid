@@ -1,6 +1,6 @@
 
 <h1>
-Cart
+{{ 'cart.general.title' | t }}
 <span class="cart-item-count">
   {{ cart.item_count }}
 </span>
@@ -8,12 +8,12 @@ Cart
 
 {% if cart.item_count > 0 %}
 <h2>
-  All preorders ship free this March
+  {{ 'cart.general.preorder_info' | t }}
 </h2>
   <form action="/cart" method="post" novalidate>
     <table>
       <thead>
-        <th colspan="2">Order Summary</th>
+        <th colspan="2">{{ 'cart.lines.title' | t }}</th>
       
       </thead>
       <tbody>
@@ -36,11 +36,11 @@ Cart
       <table>
         <tbody>
         <tr>
-          <td> Shipping </td>
-          <td>Free</td>
+          <td> {{ 'cart.lines.shipping' | t }} </td>
+          <td>{{ 'cart.lines.free' | t }}</td>
         </tr>
         <tr>
-          <td> Subtotal </td>
+          <td> {{ 'cart.lines.subtotal' | t }} </td>
           <td>{{cart.total_price | money}}</td>
         </tr>
         </tbody>
@@ -50,9 +50,15 @@ Cart
       <button type="submit" name="checkout">Checkout</button>
   </form>
   <p>
-    Any questions?
-   <a href="mailto:support@gitfitra.com"> support@gitfitra.com </a>
+    {{ 'cart.general.support_title' | t }}
+    <br>
+   <a href="{{ 'cart.general.support_email' | t }}"> support@gitfitra.com </a>
   </p>
 {% else %}
-  Cart is empty
+{{ 'cart.general.empty' | t }}
+  {% for i in (1..3) %}
+  <div class="empty-line"></div>
+  {% endfor %}
+
+  <a href="/" >{{ 'cart.general.back' | t }} </a>
 {% endif %}
