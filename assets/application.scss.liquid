@@ -30,3 +30,20 @@ html,
      margin: 0px;
      padding: 0px;
  }
+
+ //utility classes
+ .grid{
+     display: grid;
+     grid-column-gap: $gutter-global;
+     grid-row-gap: $gutter-global;
+ }
+
+ .main-content{
+    min-height: 100vh;
+    padding: $gutter-global;
+ }
+
+ .two-columns{
+    grid-template-columns: 1fr 1fr;
+ }
+
