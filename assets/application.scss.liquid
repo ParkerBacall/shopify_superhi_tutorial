@@ -41,9 +41,43 @@ html,
  .main-content{
     min-height: 100vh;
     padding: $gutter-global;
+    width: 50%;
+    margin-left: auto;
  }
 
  .two-columns{
     grid-template-columns: 1fr 1fr;
  }
 
+.valign-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.valign-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#page-index {
+
+}
+
+#product-info {
+    grid-template-rows: minmax(max-content, auto) minmax(min-content, max-content);
+}
+
+.headline{
+    padding-bottom: $line-global*3;
+}
+
+.sticky-side-image{
+    position: fixed;
+    width: 50%;
+    left: 0;
+    top: $gutter-global;
+    bottom: $gutter-global;
+    background-color: wheat;
+}
