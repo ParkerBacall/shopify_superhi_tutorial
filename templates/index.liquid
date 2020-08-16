@@ -2,8 +2,8 @@
 <div id="page-index">
   <div id="product-images" class="sticky-side-image">
     {% for image in mainProduct.images %}
-      <div id="single-product-image"class="image-container">
-          <img  class=image-zoom src="{{ image | img_url:'large'}}" data-zoom="{{ image | img_url: '1024x1024', scale: 2}}">
+      <div class="image-container single-product-image">
+          <img  class=image-zoom src="{{ image | img_url:'x1440'}}" data-zoom="{{ image | img_url: '1024x1024', scale: 2}}">
           <div class="image_details" ></div>
       </div>
     {% endfor %}
