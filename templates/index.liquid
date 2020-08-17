@@ -11,7 +11,7 @@
   
   <div id="product-info" class="main-content grid">
     <div class="valign-center" >
-    <h1>{{ mainProduct.title }}</h1>
+    <h1 class="headline-big">{{ mainProduct.title | remove: ' Activity Band' }}</h1>
     </div>
 
   <!-- begin info grid -->
@@ -22,11 +22,13 @@
       
       <div class="description">
         <h3>{{ 'product.copy.description_headline' | t }}</h3>
+        <div class="description-content">
         {{ mainProduct.description }}
+        </div>
       </div>
       
       <div class="details">
-        <ul>
+        <ul class="list-with-stroke">
           <li>{{ 'product.details_list.item1' | t }}</li>
           <li>{{ 'product.details_list.item2' | t }}</li>
         </ul>

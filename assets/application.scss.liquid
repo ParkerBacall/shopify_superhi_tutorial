@@ -2,11 +2,17 @@
  $white: #FFFFFF;
  $black: #000000;
  $color-text: #555555;
+ $color-border: #DEDEDE;
+
 
  $line-global: 20px;
  $gutter-global: $line-global*2;
 
  $main-font: 'Helvetica-Neue', Arial, sans-serif;
+
+$body-font-size: 15px;
+
+$standard-border: 1px solid $color-border;
 
 *{
     font-family: $main-font;
@@ -24,13 +30,40 @@ html,
 
  body {
      background-color: $white;
+     font-size: $body-font-size;
  }
 
- h1,h2,h3,h4,h5,h6,p { 
+ h1,h2,h3,h4,h5,h6,p,ul,ol { 
      margin: 0px;
      padding: 0px;
+     font-weight: 400;
  }
 
+ //style guide
+ .headline-big{
+    font-size: 15vw;
+    line-height: 1;
+}
+
+h2{
+    font-size: $body-font-size*2;
+    line-height: $line-global*2;
+}
+h3{
+    font-size: $body-font-size;
+    line-height: $line-global;
+}
+.list-with-stroke{
+    list-style-type: none;
+}
+.list-with-stroke li{
+    padding: $line-global 0;
+    border-top: $standard-border;
+}
+
+.list-with-stroke li:last-child{
+    border-bottom: $standard-border;  
+}
  //utility classes
  .grid{
      display: grid;
@@ -96,3 +129,8 @@ span{
     width: 100%;
     height: 100%;
 }
+
+.description-content{
+    margin-top: $line-global;
+}
+
