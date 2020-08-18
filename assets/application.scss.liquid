@@ -2,10 +2,13 @@
  $white: #FFFFFF;
  $black: #000000;
  $color-text: #555555;
+ $color-label: #707070;
  $color-border: #DEDEDE;
 
 
  $line-global: 20px;
+ $label-font-size: 12px;
+
  $gutter-global: $line-global*2;
 
  $main-font: 'Helvetica-Neue', Arial, sans-serif;
@@ -13,6 +16,24 @@
 $body-font-size: 15px;
 
 $standard-border: 1px solid $color-border;
+
+@mixin reset-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    text-align: left;
+  }
 
 *{
     font-family: $main-font;
@@ -53,6 +74,13 @@ h3{
     font-size: $body-font-size;
     line-height: $line-global;
 }
+
+p,ul,ol{
+    font-size: $body-font-size;
+    line-height: $line-global;
+    color: $color-text
+}
+
 .list-with-stroke{
     list-style-type: none;
 }
@@ -63,6 +91,31 @@ h3{
 
 .list-with-stroke li:last-child{
     border-bottom: $standard-border;  
+}
+
+label{
+    font-size: $label-font-size;
+    color: $color-label;
+}
+
+select{
+    @include reset-input;
+    width: 100%;
+    font-size: $body-font-size;
+    line-height: $line-global;
+    padding: $line-global;
+    border: $standard-border;
+}
+
+button{
+    @include reset-input;
+    width: 100%;
+    font-size: $body-font-size;
+    line-height: $line-global;
+    padding: $line-global;
+    border: $standard-border;
+    background-color: $color-accent;
+    color: $white;
 }
  //utility classes
  .grid{
@@ -133,4 +186,19 @@ span{
 .description-content{
     margin-top: $line-global;
 }
+#add-to-cart-button{
+    display: flex;
+}
 
+#add-to-cart-button .product-price{
+
+    margin-left: 100px;
+}
+
+.form-wrapper{
+   padding-top: $line-global*3;
+}
+
+#add-to-cart-form{
+    margin-top: -($line-global)
+}
